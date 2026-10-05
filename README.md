@@ -1,5 +1,5 @@
 ### Descripción
-Aplicación de gamificación de limpieza utilizando visión por computadora para rastrear el movimiento físico de una escoba o trapo. Tecnologías usadas: Node.js, Express, Socket.IO, HTML5
+Aplicación de gamificación de limpieza utilizando visión por computadora para rastrear el movimiento físico de una escoba o trapo. Tecnologías usadas: JavaScript, Node.js, Express, Socket.IO, HTML5
 
 ### Instrucciones de uso
 1. Descargar las dependencias necesarias con `npm install`
