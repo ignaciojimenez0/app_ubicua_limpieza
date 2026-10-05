@@ -1,0 +1,246 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #2c3e50;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+}
+
+.vista {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.vista.activa {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#vista-menu h1 {
+    margin-bottom: 30px;
+    font-size: 3rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.menu-opciones {
+    display: flex;
+    gap: 40px;
+}
+
+.columna {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.boton {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.boton:hover,
+.boton.seleccionado {
+    background: #2980b9;
+    transform: scale(1.05);
+    border: 2px solid white;
+}
+
+.racha {
+    font-size: 1.5rem;
+    color: #f1c40f;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.opcion-zona {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: background 0.2s, border 0.2s;
+}
+
+.opcion-zona:hover {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.opcion-zona.activa {
+    border-color: #2ecc71;
+    background: rgba(46, 204, 113, 0.3);
+    box-shadow: 0 0 15px rgba(46, 204, 113, 0.5);
+}
+
+#vista-limpieza {
+    display: none;
+    background-color: #e0e0e0;
+}
+
+#vista-limpieza.activa {
+    display: block;
+}
+
+canvas {
+    display: block;
+}
+
+.hud {
+    position: absolute;
+    top: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 15px 25px;
+    border-radius: 15px;
+    pointer-events: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+#indicador-progreso {
+    left: 20px;
+}
+
+#indicador-tiempo {
+    right: 20px;
+    color: #e74c3c;
+    display: none;
+}
+
+#tarjeta-producto {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    display: none;
+    background: rgba(255, 255, 255, 0.95);
+    color: #333;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    max-width: 300px;
+    align-items: center;
+    gap: 15px;
+    border-left: 5px solid #3498db;
+    z-index: 10;
+}
+
+#tarjeta-producto img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+#tarjeta-producto h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.2rem;
+}
+
+#tarjeta-producto p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+#vista-resultados {
+    text-align: center;
+}
+
+.trofeo {
+    font-size: 5rem;
+    margin-bottom: 10px;
+}
+
+.estadistica {
+    font-size: 2rem;
+    margin: 15px 0;
+}
+
+.record {
+    color: #f1c40f;
+    font-weight: bold;
+    animation: latido 1s infinite alternate;
+}
+
+@keyframes latido {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.1);
+    }
+}
+
+#estado-microfono {
+    color: #2ecc71;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+#res-tiempo {
+    display: none;
+}
+
+#res-record {
+    display: none;
+}
+
+#res-racha {
+    display: none;
+}
+
+#vista-analisis {
+    text-align: center;
+}
+
+#vista-analisis h1 {
+    color: #f1c40f;
+}
+
+.texto-instruccion-foto {
+    font-size: 1.5rem;
+}
+
+#contenedor-foto-recibida {
+    display: none;
+    margin-top: 20px;
+    flex-direction: column;
+    align-items: center;
+}
+
+#foto-preview {
+    width: 400px;
+    max-width: 90%;
+    border-radius: 15px;
+    border: 4px solid white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+#texto-analizando {
+    margin-top: 20px;
+    color: #2ecc71;
+}

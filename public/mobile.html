@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensor de Limpieza Híbrido</title>
+    <link rel="stylesheet" href="mobile.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+
+    <script async src="https://docs.opencv.org/4.8.0/opencv.js" onload="window.cvLoaded = true;"
+        type="text/javascript"></script>
+</head>
+
+<body>
+    <div class="video-container" id="video-container">
+        <video class="input_video" autoplay playsinline></video>
+        <canvas class="output_canvas"></canvas>
+    </div>
+
+    <h2 id="titulo">Sensor de Limpieza Múltiple</h2>
+    <p id="estado">Iniciando sistema...</p>
+    <p id="subestado">ESPERANDO CARGA DE OPENCV... (Puede tardar la primera vez)</p>
+
+    <div id="controles-principales">
+        <div id="botones-seleccion">
+            <p class="texto-voz">Voz: di "Escoba" o
+                "Trapo"</p>
+            <button id="btn-trapo" class="btn-trapo">✋ Modo Trapo (Mesa)</button>
+            <button id="btn-escoba" class="btn-escoba">🧹 Modo Escoba (Suelo)</button>
+        </div>
+        <button id="btn-confirmar-color">✅ Confirmar Color</button>
+        <button id="btn-empezar-calibracion">▶️
+            Empezar Calibración</button>
+        <button id="btn-terminar">Terminar Limpieza</button>
+    </div>
+
+    <div id="panel-camara">
+        <h3>📸 ¡Se requiere una foto!</h3>
+        <p>La pantalla principal ha pedido una foto del suelo para analizar la superficie.</p>
+        <input type="file" accept="image/*" capture="environment" id="input-camara">
+        <button onclick="document.getElementById('input-camara').click()" class="btn-abrir-camara">Abrir
+            Cámara</button>
+        <p id="estado-envio"></p>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="mobile.js"></script>
+</body>
+
+</html>

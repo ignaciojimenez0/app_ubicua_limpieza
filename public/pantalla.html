@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suelo a Limpiar - Gamificado</title>
+    <link rel="stylesheet" href="pantalla.css">
+</head>
+
+<body>
+
+    <div id="vista-menu" class="vista activa">
+        <h1>Centro de Limpieza</h1>
+        <div id="estado-microfono">🎤 Escuchando... Di "Salón", "Recomendación" o "Empezar"</div>
+        <div class="menu-opciones">
+            <div class="columna">
+                <h2>Elige Zona</h2>
+                <div class="opcion-zona activa" id="zona-salon" onclick="seleccionarZona('salon')">🛋️ Salón (Madera)
+                </div>
+                <div class="opcion-zona" id="zona-cocina" onclick="seleccionarZona('cocina')">🍳 Cocina (Baldosa)</div>
+                <div class="opcion-zona" id="zona-bano" onclick="seleccionarZona('bano')">🛁 Baño (Cerámica)</div>
+            </div>
+            <div class="columna">
+                <h2>Rendimiento</h2>
+                <div class="racha" id="texto-racha">🔥 Racha: 0 días</div>
+                <div class="opcion-zona" id="btn-recomendacion" onclick="toggleRecomendacion()">💡 Recomendación:
+                    DESACTIVADA</div>
+                <button class="boton" id="btn-iniciar" onclick="iniciarLimpieza()">COMENZAR (Voz: "Empezar")</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="vista-limpieza" class="vista">
+        <div id="indicador-progreso" class="hud">0% Limpio</div>
+        <div id="indicador-tiempo" class="hud">00:00</div>
+
+        <div id="tarjeta-producto">
+            <img id="producto-img" src="" alt="Producto">
+            <div>
+                <h3 id="producto-titulo">Producto</h3>
+                <p id="producto-desc">Descripción</p>
+            </div>
+        </div>
+
+        <canvas id="piso" width="1000" height="800"></canvas>
+    </div>
+
+    <div id="vista-resultados" class="vista">
+        <div class="trofeo">🏆</div>
+        <h1>¡Limpieza Completada!</h1>
+        <div class="estadistica" id="res-zona">Zona: Salón</div>
+        <div class="estadistica" id="res-tiempo">Tiempo: 01:23</div>
+        <div class="estadistica record" id="res-record">¡NUEVO RÉCORD!</div>
+        <div class="estadistica" id="res-racha">🔥 Racha aumentada</div>
+        <button class="boton" onclick="volverMenu()">Volver al Menú</button>
+    </div>
+
+    <div id="vista-analisis" class="vista">
+        <h1>📸 Esperando Foto...</h1>
+        <p class="texto-instruccion-foto">Toma una foto del suelo desde tu dispositivo móvil.</p>
+
+        <div id="contenedor-foto-recibida">
+            <img id="foto-preview" src="">
+            <h2 id="texto-analizando">Analizando espectro de color...</h2>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="pantalla.js"></script>
+</body>
+
+</html>

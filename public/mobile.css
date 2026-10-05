@@ -1,0 +1,178 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.2s;
+    overflow: hidden;
+}
+
+button {
+    padding: 20px 40px;
+    font-size: 20px;
+    border-radius: 30px;
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+    cursor: pointer;
+    z-index: 10;
+    width: 80%;
+    max-width: 300px;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.btn-trapo {
+    background-color: #27ae60;
+}
+
+.btn-escoba {
+    background-color: #8e44ad;
+}
+
+#btn-terminar {
+    background-color: #e74c3c;
+    font-size: 16px;
+    padding: 15px 30px;
+    display: none;
+}
+
+#estado {
+    font-size: 18px;
+    color: #555;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    z-index: 10;
+}
+
+#subestado {
+    font-size: 14px;
+    color: #777;
+    text-align: center;
+    margin-bottom: 20px;
+    z-index: 10;
+}
+
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    display: none;
+    background-color: #000;
+}
+
+.input_video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.output_canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+#controles-principales {
+    z-index: 10;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+#panel-camara {
+    z-index: 11;
+    position: relative;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    display: none;
+    text-align: center;
+    padding: 20px;
+}
+
+h2 {
+    z-index: 10;
+    position: relative;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#cv-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    pointer-events: none;
+}
+
+#botones-seleccion {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.texto-voz {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+#btn-confirmar-color {
+    display: none;
+    background-color: #e67e22;
+    width: 80%;
+    max-width: 300px;
+}
+
+#btn-empezar-calibracion {
+    display: none;
+    background-color: #27ae60;
+    width: 80%;
+    max-width: 300px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+#panel-camara h3 {
+    color: #2c3e50;
+}
+
+#input-camara {
+    display: none;
+}
+
+.btn-abrir-camara {
+    background: #9b59b6;
+    padding: 20px;
+    font-size: 1.5rem;
+    border-radius: 15px;
+    width: 100%;
+}
+
+#estado-envio {
+    margin-top: 15px;
+    font-weight: bold;
+}
